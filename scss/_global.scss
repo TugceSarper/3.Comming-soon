@@ -1,0 +1,88 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include max(1400) {
+    font-size: 57.5%;
+  }
+
+  @include max(500) {
+    font-size: 50%;
+
+  }
+
+}
+
+body {
+  font-size: $default-font-size;
+  font-family: $font-text;
+  font-weight: 300;
+  color: $color-default;
+  overflow-x: hidden;
+
+  @include max(500) {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.mb-4 {
+  margin-bottom: 4rem;
+  @include max(1000) {
+    margin-bottom: 2rem;
+
+  }
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+::selection {
+  background-color: rgba($color-primary, .9);
+  color: #eeeeee;
+}
+
+
+.container {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 5rem;
+  align-items: center;
+
+  @include max(1200) {
+    width: 75%;
+  }
+  @include max(1100) {
+    width: 80%;
+  }
+
+  @include max(1000) {
+    grid-template-columns: 1fr;
+  }
+
+  @include max(650) {
+    width: 90%;
+
+  }
+
+}

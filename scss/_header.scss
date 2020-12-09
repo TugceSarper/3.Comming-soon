@@ -1,0 +1,126 @@
+
+  .logo {
+    @include center-flex;
+    height: 4rem;
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 3rem;
+    font-weight: 600;
+    color: $color-primary;
+
+    @include max(1000) {
+      top: 2rem;
+      left: 2rem;
+    }
+
+  }
+
+  .menu-box {
+    position: fixed;
+    top: 3rem;
+    right: 1rem;
+    z-index: 1000;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+
+
+
+    @include max(1000) {
+      top: 2rem;
+      right: 0rem;
+    }
+
+    .text {
+      position: relative;
+      width: 8rem;
+      overflow: hidden;
+      display: flex;
+      font-weight: 400;
+      text-transform: capitalize;
+      letter-spacing: 3px;
+
+      @include max(400) {
+        display: none;
+
+      }
+
+      &.open-text {
+        .more {
+          transform: translateX(-150%);
+        }
+
+        .close {
+          transform: translateX(0);
+        }
+      }
+
+      .more {
+        position: relative;
+        left: 0;
+        top: 0;
+        transition: all $animation-time $animation-function;
+      }
+
+      .close {
+        position: absolute;
+        left: 0;
+        right: 0;
+        transform: translateX(150%);
+        transition: all $animation-time $animation-function;
+      }
+    }
+
+  }
+
+  .menu {
+    margin-left: .5rem;
+    width: 4rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform $animation-time $animation-function;
+    background-color: transparent;
+
+    &.open {
+      transform: rotate(-45deg*5);
+
+      .bar.left {
+        transform: rotate((-90deg)*1) translateX(0.8rem);
+      }
+
+      .bar.right {
+        transform: rotate((-90deg)*1) translateX(-0.8rem);
+
+      }
+    }
+
+    .bar {
+      background-color: $color-primary;
+      width: 100%;
+      height: 3px;
+      border-radius: 1rem;
+      @include transition-fix;
+
+    }
+
+    .half {
+      width: 50%;
+    }
+
+    .left {
+      transform-origin: right;
+      transition: transform $animation-time $animation-function;
+    }
+
+    .right {
+      align-self: flex-end;
+      transform-origin: left;
+      transition: transform $animation-time $animation-function;
+    }
+  }

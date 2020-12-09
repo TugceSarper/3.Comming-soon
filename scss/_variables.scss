@@ -1,0 +1,24 @@
+$f1: 'Montserrat', sans-serif;
+$f2: 'Roboto Mono', monospace;
+
+$font-text: $f1;
+$font-heading: $f1;
+$font-numbers: $f2;
+
+$c1: #4CAF50;
+$c2: #F50057;
+$c3: orangered;
+
+$color-primary: $c3;
+$color-secondary: $c2;
+$color-default: #ffffff;
+
+
+$default-font-size: 1.8rem;
+
+
+//Header
+
+
+$animation-function: cubic-bezier(0.91, 0.01, 0.6, 0.99);
+$animation-time: .7s;

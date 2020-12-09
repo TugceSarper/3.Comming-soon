@@ -1,0 +1,200 @@
+.bg {
+  background-image: linear-gradient(rgba(black , .8), rgba(black, .8)), url("../img/bg1.jpg");
+  background-size: cover;
+  background-position:center center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform $animation-time $animation-function;
+
+  &.open3{
+    transform: translateX(-40%);
+  }
+}
+
+.content-1 {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  @include center-flex;
+  @include transition-fix;
+  transition: transform $animation-time $animation-function;
+
+  @include max(500) {
+  padding-top: 7rem;
+  }
+
+  &.open1 {
+    transform: translateX(-40%);
+  }
+
+
+  .left {
+
+
+    &__h1 {
+      font-size: 6rem;
+      letter-spacing: 3px;
+
+      span {
+        font-size: 4rem;
+        display: block;
+      }
+
+      @include max(1200) {
+        font-size: 5rem;
+
+        span {
+          font-size: 3.5rem;
+        }
+
+      }
+
+      @include max(500) {
+        font-size: 4rem;
+        span{
+          font-size: 3rem;
+        }
+
+      }
+
+    }
+
+    &__h4{
+      @include max(500) {
+        justify-content: center;
+      }
+    }
+
+    &__text {
+      word-spacing: 2px;
+      font-size: inherit;
+    }
+
+    &__form {
+      width: 70%;
+      display: grid;
+      grid-template-columns: 70% 1fr;
+
+      @include max(1000) {
+        width: 100%;
+      }
+      @include max(500) {
+        grid-template-columns: 1fr;
+        row-gap: 1.5rem;
+      }
+
+    }
+
+    &__input, &__btn {
+      font-family: $f2;
+      font-weight: inherit;
+      padding: 1.5rem 2rem;
+      border: none;
+      color: white;
+      font-size: 1.6rem;
+    }
+
+    &__input {
+      background-color: rgba(white, .1);
+    }
+
+    &__btn {
+      background-color: $color-primary;
+      cursor: pointer;
+    }
+  }
+
+
+  .right {
+
+    .expired {
+      display: none;
+      transform: rotateZ(90deg);
+      font-size: 4rem;
+      font-weight: 500;
+      color: $color-primary;
+    }
+
+    .counters {
+      display: grid;
+      @include max(1000) {
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 3rem;
+      }
+      @include max(500) {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2rem;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+
+      .counter {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $color-primary;
+        @include max(1000) {
+          justify-content: center;
+          border-bottom: none;
+
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+          @include max(1000) {
+            margin-bottom: 0;
+
+          }
+        }
+
+
+        .number {
+          font-size: 6rem;
+          font-weight: 200;
+          color: inherit;
+          line-height: 1;
+          display: block;
+        }
+
+        .text {
+          font-size: 2rem;
+          text-transform: capitalize;
+
+          @include max(1000) {
+            margin-left: 1rem;
+            color: $color-primary;
+          }
+
+          .d-none {
+            @include max(1000) {
+              display: none;
+            }
+          }
+
+        }
+
+        &:nth-child(even) {
+          .text {
+            order: -1;
+            @include max(1000) {
+              order: 0;
+
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+
+
+}
